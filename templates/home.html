@@ -24,32 +24,18 @@
   </div>
 </div>
 <div class="container px-0">
-  <div class="pp-gallery">
+    <div class="pp-gallery">
     <div class="card-columns">
-      <div class="card" data-groups="[&quot;nature&quot;]"><a href="{% static 'image-detail.html' %}">
-          <figure class="pp-effect"><img class="img-fluid" src="{% static 'images/1-nature.jpg' %}" alt="Nature"/>
+      {% for imagestore in image_store %}
+      <div class="card" data-groups="[&quot;nature&quot;]">
+        <a href="#">
+          <figure class="pp-effect"><img class="img-fluid" src="{% static 'images/about.jpeg' %}" alt="Nature"/>
             <figcaption>
               <div class="h4">Forest</div>
               <p>Nature</p>
             </figcaption>
           </figure></a></div>
-          <div class="card" data-groups="[&quot;nature&quot;]"><a href="{% static 'image-detail.html' %}">
-            <figure class="pp-effect"><img class="img-fluid" src="{% static 'images/1-nature.jpg' %}" alt="Nature"/>
-              <figcaption>
-                <div class="h4">Forest</div>
-                <p>Nature</p>
-              </figcaption>
-            </figure></a></div>
-      <div class="card" data-groups="[&quot;nature&quot;]"><a href="{% static 'image-detail.html' %}">
-          <figure class="pp-effect"><img class="img-fluid" src="{% static 'images/2-nature.jpg' %}" alt="Nature"/>
-            <figcaption>
-              <div class="h4">Bird</div>
-              <p>Nature</p>
-            </figcaption>
-          </figure></a></div>
-     
-     
-      
+          {% endfor %}
     </div>
   </div>
 </div>

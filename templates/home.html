@@ -15,14 +15,27 @@
     <div class="row">
       <div class="col-sm-12">
         <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">All</a>
+        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">My Images</a>
         <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="people">People</a>
         <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="nature">Nature</a>
         <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="computer">Computer</a>
         <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="food">Food</a>
+        <div class="input-group">
+          <div class="form-outline">
+        <input type="search" id="form1" class="form-control" placeholder="search"/>
       </div>
+      <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">Search</a>
+          </div>
+      </div>
+
     </div>
+
+    
   </div>
+  
 </div>
+
+
 <div class="container px-0">
     <div class="pp-gallery">
     <div class="card-columns">
@@ -32,7 +45,7 @@
           <figure class="pp-effect"><img class="img-fluid" src="{{ imagestore.images.url }}" alt="Nature"/>
             <figcaption>
               <div class="h4">{{ imagestore.image_name }}</div>
-              <p>{{ imagestore.image_name }}</p>
+              <p>{{ imagestore.category }}</p>
             </figcaption>
           </figure></a></div>
           {% endfor %}

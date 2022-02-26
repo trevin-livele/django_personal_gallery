@@ -29,10 +29,10 @@
       {% for imagestore in image_store %}
       <div class="card" data-groups="[&quot;nature&quot;]">
         <a href="#">
-          <figure class="pp-effect"><img class="img-fluid" src="{% static 'images/about.jpeg' %}" alt="Nature"/>
+          <figure class="pp-effect"><img class="img-fluid" src="{{ imagestore.images.url }}" alt="Nature"/>
             <figcaption>
-              <div class="h4">Forest</div>
-              <p>Nature</p>
+              <div class="h4">{{ imagestore.image_name }}</div>
+              <p>{{ imagestore.image_name }}</p>
             </figcaption>
           </figure></a></div>
           {% endfor %}

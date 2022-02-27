@@ -13,13 +13,12 @@
 <div class="container px-0 py-4">
   <div class="pp-category-filter">
     <div class="row">
-      <!-- <div class="col-sm-12">
-        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">All</a>
-        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">My Images</a>
-        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="people">People</a>
-        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="nature">Nature</a>
-        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="computer">Computer</a>
-        <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="food">Food</a> -->
+      <div class="col-sm-12">
+        <a class="btn btn-outline-success pp-filter-button" href="{% url 'imagestore'  %}" data-filter="all">All</a>
+      {% for category in links %}
+      <a class="btn btn-outline-success pp-filter-button" href="{{ category.get_url }}" data-filter="all">{{ category.category_name }}</a>
+      {% endfor %}
+     
         <div class="input-group">
           <div class="form-outline">
         <input type="search" id="form1" class="form-control" placeholder="search"/>

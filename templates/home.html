@@ -21,7 +21,7 @@
         <a class="btn btn-outline-success pp-filter-button" type="submit" href="{% url 'imagestore' %}" data-filter="all">All</a>
 
       {% for category in links %}
-      <a class="btn btn-outline-success pp-filter-button" href="{{ category.get_url }}" data-filter="all">{{ category.category_name }}</a>
+      <a class="btn btn-outline-success" href="{{ category.get_url }}" data-filter="all">{{ category.category_name }}</a>
       {% endfor %}
      
        
@@ -61,7 +61,11 @@
     </div>
   </div>
 </div>
-<div class="pp-section"></div></div>
+
+
+
+
+</div>
       </div>
     </div>
 
@@ -90,12 +94,6 @@
 
 
     
-
-
-
-    <script src="{% static 'scripts/jquery.min.js?ver=1.2.0' %}"></script>
-    <script src="{% static 'scripts/bootstrap.bundle.min.js?ver=1.2.0' %}"></script>
-    <script src="{% static 'scripts/main.js?ver=1.2.0' %}"></script>
   </body>
 </html>
 

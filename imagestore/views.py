@@ -4,7 +4,7 @@ from webbrowser import get
 from django.forms import SlugField
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
-from .models import Imagestore,Category
+from .models import Imagestore,Category,Location
 from django.db.models import Q
 # Create your views here.
 
@@ -39,3 +39,13 @@ def search(request):
         'image_store': image_store,
     }
     return render(request, 'imagestore/imagestore.html', context)
+
+
+# display all images in a specific location
+def location(request, location_id):
+    locations = Location.objects.all()
+    images = Imagestore.objects.all()
+    # get the location name
+    location = Location.objects.get(id=location_id)
+    title = location
+    return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})

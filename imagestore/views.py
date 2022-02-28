@@ -11,6 +11,7 @@ from django.db.models import Q
 
 
 def imagestore(request,category_slug=None):
+    location = Location.objects.all()
     categories = None
     image_store = None
 
@@ -24,12 +25,14 @@ def imagestore(request,category_slug=None):
 
     context = {
             'image_store' : image_store,
+            'location'    : location,
         }
     return render(request, 'imagestore/imagestore.html', context)
 
 
 
 def search(request):
+    location = Location.objects.all()
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
         if keyword:
@@ -37,15 +40,9 @@ def search(request):
 
     context = {
         'image_store': image_store,
+        'location'    : location,
     }
     return render(request, 'imagestore/imagestore.html', context)
 
 
-# display all images in a specific location
-def location(request, location_id):
-    locations = Location.objects.all()
-    images = Imagestore.objects.all()
-    # get the location name
-    location = Location.objects.get(id=location_id)
-    title = location
-    return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
+

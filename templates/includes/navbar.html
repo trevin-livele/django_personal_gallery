@@ -24,14 +24,16 @@
                 
 
 
-                  <select name="cars" id="cars">
-                    <option value="volvo">Location</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                  <select class="form-control" name="cars" id="cars">
+                    <a href="{% url 'imagestore' %}"><option value="">All</option></a>
+                    {% for location in location %}
+                <a href="{% url 'imagestore' %}?q={{location.name}}" name="q">
+
+                  <option value="{{location.name}}">{{location.name}}</option></a>
+                    {% endfor %}
                   </select>
 
-                  
+
                
                 </ul>
               </div>

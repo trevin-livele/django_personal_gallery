@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-sm-12">
 
-        <a class="btn btn-outline-success pp-filter-button" href="{% url 'imagestore' %}" data-filter="all">All</a>
+        <a class="btn btn-outline-success pp-filter-button" type="submit" href="{% url 'imagestore' %}" data-filter="all">All</a>
 
       {% for category in links %}
       <a class="btn btn-outline-success pp-filter-button" href="{{ category.get_url }}" data-filter="all">{{ category.category_name }}</a>
@@ -48,7 +48,7 @@
     <div class="card-columns">
       {% for imagestore in image_store %}
       <div class="card" data-groups="[&quot;nature&quot;]">
-        <a href="#modal">
+        <a href="#">
           <figure class="pp-effect"><img class="img-fluid" src="{{ imagestore.images.url }}" alt="Nature"/>
             <figcaption>
               <div class="h4">{{ imagestore.image_name }}</div>

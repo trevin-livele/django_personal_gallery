@@ -12,7 +12,7 @@
 </div>
 <div class="container px-0 py-4">
   <div class="pp-category-filter">
-    <h4 class="h5"> Filter images by category🤞</h4>
+    <h4 class="h5"> Filter images by category🤞 or location</h4>
     <div class="row">
       <div class="col-sm-12">
         <a class="btn btn-outline-success pp-filter-button" href="{% url 'imagestore'  %}" data-filter="all">All</a>
@@ -54,13 +54,32 @@
               <p>{{ imagestore.category }}</p>
             </figcaption>
           </figure></a></div>
+
+
+
+
+
+
+          
           {% endfor %}
+
+
+
+
+
+          
     </div>
   </div>
 </div>
 <div class="pp-section"></div></div>
       </div>
     </div>
+
+
+
+
+
+    
     <script src="{% static 'scripts/jquery.min.js?ver=1.2.0' %}"></script>
     <script src="{% static 'scripts/bootstrap.bundle.min.js?ver=1.2.0' %}"></script>
     <script src="{% static 'scripts/main.js?ver=1.2.0' %}"></script>
@@ -69,3 +88,8 @@
 
 
 {% endblock %}
+
+
+
+
+

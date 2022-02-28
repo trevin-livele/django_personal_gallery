@@ -24,12 +24,15 @@
       <a class="btn btn-outline-success pp-filter-button" href="{{ category.get_url }}" data-filter="all">{{ category.category_name }}</a>
       {% endfor %}
      
-        <div class="input-group">
-          <div class="form-outline">
-        <input type="search" id="form1" class="form-control" placeholder="search"/>
-      </div>
-      <a class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">Search</a>
-          </div>
+       
+<form action="{% url 'search' %}" method="GET">
+  <div class="input-group">
+    <div class="form-outline">
+  <input type="text" id="form1" class="form-control" placeholder="search" name="keyword"/>
+</div>
+<button type="submit" class="btn btn-outline-success pp-filter-button" href="#" data-filter="all">Search</button>
+    </div>
+</form>
       </div>
 
     </div>

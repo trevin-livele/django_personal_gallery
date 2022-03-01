@@ -1,6 +1,6 @@
 # Create your tests here.
 from django.test import TestCase
-from .models import Location, Category, Image
+from .models import Imagestore, Location, Category, Image
 
 
 # location model tests
@@ -36,7 +36,7 @@ class ImageTestCase(TestCase):
         """
         Create a image for testing
         """
-        Image.objects.create(
+        Imagestore.objects.create(
             name="Test Image",
             description="Test Description",
             location=Location.objects.create(name="Test Location"),
@@ -77,7 +77,7 @@ class ImageTestCase(TestCase):
         """
         Test that the image image is correct
         """
-        image = Image.objects.get(name="Test Image")
+        image = Imagestore.objects.get(name="Test Image")
         self.assertEqual(image.image, "http://test.com/test.jpg")
 
 
@@ -85,5 +85,5 @@ class ImageTestCase(TestCase):
         """
         Test that the image string representation is correct
         """
-        image = Image.objects.get(name="Test Image")
+        image = Imagestore.objects.get(name="Test Image")
         self
